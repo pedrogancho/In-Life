@@ -11,6 +11,8 @@ const adminSchema = new Schema({
   Ambassador: Boolean,
 
   // comida:{type: String, enum:["prego", "polvo"]}
+  //Posts => posts{type: mongoose.Schema.Types-objectID, ref: "Post"}
+  //Post.findById(123).populate('cretator')
 });
 
 const Admin = model("Admin", adminSchema);

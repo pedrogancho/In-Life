@@ -8,7 +8,7 @@ const ambassadorSchema = new Schema({
   Password: String,
   Image: String,
   Promocode: String,
-  Ambassador: Boolean,
+  role: { type: String, enum: ["Admin", "Client", "Ambassador"] },
 
   // comida:{type: String, enum:["prego", "polvo"]}
 });
