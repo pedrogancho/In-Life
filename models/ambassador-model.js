@@ -4,10 +4,10 @@ const { Schema, model } = require("mongoose");
 const ambassadorSchema = new Schema({
   name: String,
   lastName: String,
-  Email: String,
-  Password: String,
-  Image: String,
-  Promocode: String,
+  email: String,
+  password: String,
+  image: String,
+  promocode: String,
   role: { type: String, enum: ["Admin", "Client", "Ambassador"] },
 
   // comida:{type: String, enum:["prego", "polvo"]}

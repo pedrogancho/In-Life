@@ -1,1 +1,41 @@
 <h1>Signup</h1>
+<form action="/signup" method="POST">
+  <div class="imgcontainer">
+    <img src="img_avatar2.png" alt="Avatar" class="avatar" />
+  </div>
+
+  <div class="container">
+    <label for="name"><b>Name</b></label>
+    <input type="text" placeholder="Enter name" name="name" />
+
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Enter email" name="email" required />
+
+    <label for="psw"><b>Password</b></label>
+    <input
+      type="password"
+      placeholder="Enter Password"
+      name="password"
+      required
+    />
+
+    <label for="Promocode"><b>Promocode</b></label>
+    <input type="text" placeholder="Enter Promocode" name="promocode" />
+
+    <label for="validationDefault04" class="form-label">State</label>
+    <select class="form-select" id="validationDefault04" required>
+      <option>Ambassador</option>
+      <option>Admin</option>
+    </select>
+
+    <a href="/ambassador-dashboard">
+      <button type="submit" class="btn btn-primary">Signup</button>
+    </a>
+  </div>
+</form>
+
+{{! error message display: }}
+
+{{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+{{/if}}
