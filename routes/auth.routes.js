@@ -57,7 +57,7 @@ router.post("/login", (req, res) => {
         // This line triggers the creation of the session in the DB,
         // and setting of the cookie with session id that will be sent with the response
         req.session.user = ambassador;
-        res.redirect("/ambassador-dashboard");
+        res.redirect("/ambassador");
       }
     })
     .catch((err) => {
@@ -125,6 +125,7 @@ router.post("/signup", (req, res) => {
         email: email,
         password: hashedPassword,
         promocode: promocode,
+        role: "Ambassador",
       });
       // return User.create({ email, password: hashedPassword });
     })

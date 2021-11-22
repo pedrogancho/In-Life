@@ -4,8 +4,8 @@ const { Schema, model } = require("mongoose");
 const clientSchema = new Schema({
   name: String,
   lastName: String,
-  Email: String,
-  Promocode: String,
+  email: String,
+  promocode: String,
   Ambassador: { type: Schema.Types.ObjectId, ref: "Ambassador" },
   // comida:{type: String, enum:["prego", "polvo"]}
 });
