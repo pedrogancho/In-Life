@@ -4,6 +4,8 @@ const Ambassador = require("../models/ambassador-model");
 const Client = require("../models/client-model");
 const bcrypt = require("bcryptjs");
 
+const isLoggedIn = require("./../middleware/isLoggedIn");
+
 const saltRounds = 10;
 
 //ROUTES
@@ -77,7 +79,7 @@ router.get("/signup", (req, res) => {
 // POST /signup
 router.post("/signup", (req, res) => {
   // Get the email and password from the req.body
-  const { email, password } = req.body;
+  const { name, email, password, promocode } = req.body;
 
   // Check if the email and the password are provided
   const emailNotProvided = !email || email === "";
@@ -118,7 +120,12 @@ router.post("/signup", (req, res) => {
     })
     .then((hashedPassword) => {
       // Create the new user
-      return Ambassador.create({ email: email, password: hashedPassword });
+      return Ambassador.create({
+        name: name,
+        email: email,
+        password: hashedPassword,
+        promocode: promocode,
+      });
       // return User.create({ email, password: hashedPassword });
     })
     .then((createdUser) => {
@@ -135,6 +142,20 @@ router.post("/signup", (req, res) => {
 // GET Dashboard
 router.get("/ambassador", (req, res) => {
   res.render("ambassador-dashboard");
+});
+
+// GET /logout
+router.get("/logout", isLoggedIn, (req, res) => {
+  // Delete the session from the sessions collection
+  // This automatically invalidates the future request with the same cookie
+  req.session.destroy((err) => {
+    if (err) {
+      return res.render("error");
+    }
+
+    // If session was deleted successfully redirect to the home page.
+    res.redirect("/");
+  });
 });
 
 module.exports = router;
