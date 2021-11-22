@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const Admin = require("../models/admin-model");
 const Ambassador = require("../models/ambassador-model");
-const Client = require("../models/client-model");
 const bcrypt = require("bcryptjs");
 
 const isLoggedIn = require("./../middleware/isLoggedIn");
@@ -37,7 +36,7 @@ router.post("/login", (req, res) => {
   }
 
   let ambassador;
-  // Check if the user exists
+  // Check if the email exists
   Ambassador.findOne({ email: email })
     .then((foundEmail) => {
       ambassador = foundEmail;
@@ -98,7 +97,7 @@ router.post("/signup", (req, res) => {
   if (!regex.test(password)) {
     res.status(400).render("auth/signup-form", {
       errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
+        "Password needs to have at least 8 characters and must contain at least one number, one lowercase and one uppercase letter.",
     });
 
     return;

@@ -6,7 +6,7 @@ const clientSchema = new Schema({
   lastName: String,
   email: String,
   promocode: String,
-  Ambassador: { type: Schema.Types.ObjectId, ref: "Ambassador" },
+  ambassador: { type: Schema.Types.ObjectId, ref: "Ambassador" },
   // comida:{type: String, enum:["prego", "polvo"]}
 });
 
