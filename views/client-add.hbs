@@ -1,20 +1,21 @@
 <h1>Add Clients</h1>
 <div class="container">
-    <label for="name"><b>Name</b></label>
-    <input type="text" placeholder="Enter Name" name="name" required />
-    
-    <label for="lastName"><b>Last Name</b></label>
-    <input type="text" placeholder="Enter Last Name" name="lastName" required />
+    <form action="/clientsadd" method="POST">
+        <label for="name"><b>Name</b></label>
+        <input type="text" placeholder="Enter Name" name="name" required />
+        
+        <label for="lastName"><b>Last Name</b></label>
+        <input type="text" placeholder="Enter Last Name" name="lastName" required />
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Username" name="email" required />
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter emal" name="email" required />
 
-    <label for="promocode"><b>Promocode</b></label>
-    <input type="text" placeholder="Enter promocode" name="promocode" required />
+        <label for="promocode"><b>Promocode</b></label>
+        <input type="text" placeholder="Enter promocode" name="promocode" required />
 
+        <button type="submit" class="btn btn-primary">Create Client</button>
+    </form>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter email" name="email" required />
 
 <p>fazer form com os nomes de schema
     Falta criar Post Client.create()
