@@ -55,8 +55,8 @@ router.post("/login", (req, res) => {
         // Create the session + cookie and redirect the user
         // This line triggers the creation of the session in the DB,
         // and setting of the cookie with session id that will be sent with the response
-        req.session.user = user;
-        res.redirect("/ambassador");
+        req.session.user = ambassador;
+        res.redirect("/clients");
       }
     })
     .catch((err) => {
@@ -130,7 +130,7 @@ router.post("/signup", (req, res) => {
     })
     .then((createdUser) => {
       // Redirect to the home `/` page after the successful signup
-      res.redirect("/ambassador");
+      res.redirect("/clients");
     })
     .catch((err) => {
       res.render("auth/signup-form", {

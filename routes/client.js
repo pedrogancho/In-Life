@@ -19,7 +19,7 @@ router.post("/clientsadd", (req, res) => {
   })
     .then((createdClient) => {
       console.log(createdClient);
-      res.redirect(`/clientsadd`);
+      res.redirect(`/clients`);
     })
     .catch((error) => console.log("erro:", error));
 });

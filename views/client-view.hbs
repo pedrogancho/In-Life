@@ -1,18 +1,17 @@
 <h1>Client</h1>
 
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
+      <td> <a href="/clientsadd/{{this._id}}">Add Client</a></td>
     </tr>
   </thead>
   <tbody>
     {{#each clientsFromDb}}
       <tr>
-        <th scope="row"> </th>
         <td>{{this.name}}</td>
         <td>{{this.lastName}}</td>
         <td>{{this.email}}</td>
