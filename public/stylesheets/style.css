@@ -4,10 +4,10 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: monospace;
 }
 
-
-body {  
+body {
   background: url("../images/bg_image_main.jpg");
   background-size: cover;
   padding: 50px;

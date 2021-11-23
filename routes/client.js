@@ -26,7 +26,8 @@ router.post("/clientsadd", (req, res) => {
 
 //Get Client page => Show all Clients
 router.get("/clients", (req, res) => {
-  Client.find({ promocode: req.session.user }).then((clientsFromDb) => {
+  Client.find().then((clientsFromDb) => {
+    //{promocode: req.session.user}
     return res.render("client-view", { clientsFromDb });
   });
 });
@@ -54,6 +55,17 @@ router.post("/client-update/:clientId/edit", (req, res) => {
   )
     .then((updatedClient) => {
       res.redirect(`/clients`);
+    })
+    .catch((err) => console.log(err));
+});
+
+// POST   client-update/:clientId/delete
+router.post("/client-update/:clientId/delete", (req, res) => {
+  const clientId = req.params.clientId;
+
+  Client.findByIdAndRemove(clientId)
+    .then((status) => {
+      res.redirect("/clients");
     })
     .catch((err) => console.log(err));
 });
