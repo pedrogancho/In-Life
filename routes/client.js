@@ -26,27 +26,34 @@ router.post("/clientsadd", (req, res) => {
 
 //Get Client page => Show all Clients
 router.get("/clients", (req, res) => {
-  Client.find().then((clientsFromDb) => {
+  Client.find({ promocode: req.session.user }).then((clientsFromDb) => {
     return res.render("client-view", { clientsFromDb });
   });
 });
-//Get /clients-update
-router.get("/clients-update", (req, res) => {
-  res.render("clients-update");
+
+// GET /client/:clientId/edit - Renders the edit client POST form
+router.get("/client-update/:clientId/edit", (req, res) => {
+  const clientId = req.params.clientId;
+
+  Client.findById(clientId)
+    .then((client) => {
+      res.render("client-update", { client: client });
+    })
+    .catch((err) => console.log(err));
 });
 
-//Update Client
-router.post("/clients-update", (req, res) => {
-  const clientsId = req.params.clientsId;
+//Update Client /POST
+router.post("/client-update/:clientId/edit", (req, res) => {
+  const clientId = req.params.clientId;
   const { name, lastName, email, promocode } = req.body;
 
   Client.findByIdAndUpdate(
-    clientsId,
+    clientId,
     { name, lastName, email, promocode },
     { new: true }
   )
     .then((updatedClient) => {
-      res.redirect(`/clients-update${clientsId}`);
+      res.redirect(`/clients`);
     })
     .catch((err) => console.log(err));
 });

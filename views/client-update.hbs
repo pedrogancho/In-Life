@@ -1,13 +1,20 @@
-<h1>
-  Update Clients Get do form FindById() Post do form => FindandUpdate()
+<h2>Edit a Client</h2>
 
-</h1>
-<form action="/clients-update{{client._id}}" method="POST">
-  <label>Comment:</label>
-  <input type="text" name="comment" />
-
-  <br />
+<form action="/client-update/{{client._id}}/edit" method="POST">
   <label>Name:</label>
-  <input type="text" name="text" />
-  <button type="submit">Update</button>
+  <input type="text" name="name" value="{{client.name}}" />
+
+  <label>Last Name:</label>
+  <input type="text" name="lastName" value="{{client.lastName}}" />
+
+  <label>Email:</label>
+  <input type="text" name="email" value="{{client.email}}" />
+
+  <button type="submit">Save changes</button>
+</form>
+
+<hr />
+
+<form action="/client-update/{{client._id}}/delete" method="POST">
+  <button type="submit">Delete</button>
 </form>

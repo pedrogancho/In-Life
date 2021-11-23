@@ -55,7 +55,7 @@ router.post("/login", (req, res) => {
         // Create the session + cookie and redirect the user
         // This line triggers the creation of the session in the DB,
         // and setting of the cookie with session id that will be sent with the response
-        req.session.user = ambassador;
+        req.session.user = user;
         res.redirect("/ambassador");
       }
     })

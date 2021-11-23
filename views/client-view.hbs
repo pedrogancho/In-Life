@@ -1,5 +1,24 @@
 <h1>Client</h1>
 
-{{#each clientsFromDb}}
-  <p> {{this.name}} </p>
-{{/each}}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each clientsFromDb}}
+      <tr>
+        <th scope="row">1</th>
+        <td>{{this.name}}</td>
+        <td>{{this.lastName}}</td>
+        <td>@{{this.email}}</td>
+        <td> <a href="/client-update/{{this._id}}/edit">Edit</a></td>
+      </tr>
+
+    {{/each}}
+  </tbody>
+</table>
