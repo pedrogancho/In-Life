@@ -56,6 +56,7 @@ router.post("/login", (req, res) => {
         // This line triggers the creation of the session in the DB,
         // and setting of the cookie with session id that will be sent with the response
         req.session.user = ambassador;
+        console.log("user session: ", req.session.user);
         res.redirect("/clients");
       }
     })
@@ -64,10 +65,6 @@ router.post("/login", (req, res) => {
         errorMessage: err.message || "Provide email and password.",
       });
     });
-});
-
-router.get("/signup", (req, res) => {
-  res.render("auth/signup-form");
 });
 
 //Get Signup
@@ -130,7 +127,7 @@ router.post("/signup", (req, res) => {
     })
     .then((createdUser) => {
       // Redirect to the home `/` page after the successful signup
-      res.redirect("/clients");
+      res.redirect("/login");
     })
     .catch((err) => {
       res.render("auth/signup-form", {
@@ -144,8 +141,13 @@ router.get("/ambassador", (req, res) => {
   res.render("ambassador-dashboard");
 });
 
+router.get("/secret", isLoggedIn, (req, res) => {
+  res.render("secret-view");
+});
+
 // GET /logout
-router.get("/logout", isLoggedIn, (req, res) => {
+router.get("/logout", (req, res) => {
+  console.log("here");
   // Delete the session from the sessions collection
   // This automatically invalidates the future request with the same cookie
   req.session.destroy((err) => {

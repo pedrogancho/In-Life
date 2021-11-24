@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const Client = require("../models/client-model");
+const isLoggedIn = require("./../middleware/isLoggedIn");
 
+/* GET home page */
+router.get("/", (req, res, next) => {
+  // Check if the incoming request has a valid cookie/session
+  let userIsLoggedIn = false;
+  if (req.session.user) {
+    userIsLoggedIn = true;
+  }
+
+  res.render("index", { userIsLoggedIn: userIsLoggedIn });
+});
 //add clients
 router.get("/clientsadd", (req, res) => {
   res.render("client-add");
@@ -26,10 +37,20 @@ router.post("/clientsadd", (req, res) => {
 
 //Get Client page => Show all Clients
 router.get("/clients", (req, res) => {
-  Client.find().then((clientsFromDb) => {
-    //{promocode: req.session.user}
-    return res.render("client-view", { clientsFromDb });
-  });
+  Client.find({ promocode: req.session.user.promocode }).then(
+    (clientsFromDb) => {
+      let IsLoggedIn = false;
+
+      if (req.session.user) {
+        IsLoggedIn = true;
+      }
+      //{promocode: req.session.user}
+      return res.render("client-view", {
+        clientsFromDb,
+        IsLoggedIn: IsLoggedIn,
+      });
+    }
+  );
 });
 
 // GET /client/:clientId/edit - Renders the edit client POST form

@@ -1,23 +1,20 @@
-html {
-  background: url("../images/bg_image_main.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  font-family: monospace;
-}
-
 body {
-  background: url("../images/bg_image_main.jpg");
-  background-size: cover;
+  background: url("../images/home.jpeg");
+  background-size: contain;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00b7ff;
 }
-
-h1 {
-  color: 15px;
+.container {
+  display: flex;
+}
+.align-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-content: center;
 }

@@ -1,4 +1,4 @@
-<h1>Client</h1>
+<h2>Client</h2>
 
 <table class="table table-hover">
   <thead>
@@ -10,14 +10,24 @@
     </tr>
   </thead>
   <tbody>
-    {{#each clientsFromDb}}
-      <tr>
-        <td>{{this.name}}</td>
-        <td>{{this.lastName}}</td>
-        <td>{{this.email}}</td>
-        <td> <a href="/client-update/{{this._id}}/edit">Edit</a></td>
-      </tr>
+    {{#if IsLoggedIn}}
+      {{#each clientsFromDb}}
+        <tr>
+          <td>{{this.name}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.email}}</td>
+          <td> <a href="/client-update/{{this._id}}/edit">Edit</a></td>
+        </tr>
 
+      {{/each}}
+    {{/if}}
+
+    {{#each client.ambassador}}
+      <h3> {{this.name}} </h3>
     {{/each}}
   </tbody>
 </table>
+<footer></footer>
+<a href="/login">
+  <button type="button" class="btn btn-primary">Logout</button>
+</a>
