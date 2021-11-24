@@ -1,19 +1,51 @@
-<h2>Add Clients</h2>
-<div class="container">
-    <form action="/clientsadd" method="POST">
-        <label for="name"><b>Name</b></label>
-        <input type="text" placeholder="Enter Name" name="name" required />
-        
-        <label for="lastName"><b>Last Name</b></label>
-        <input type="text" placeholder="Enter Last Name" name="lastName" required />
+<div class="align-form">
+  <form class="form-signin" action="/clientsadd" method="POST">
 
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter email" name="email" required />
+    <h3 class="h3 mb-3 font-weight-normal">Add Clients</h3>
+    <label for="Name" class="sr-only">Name</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control"
+      placeholder="Name"
+      required=""
+      autofocus=""
+    />
+    <label for="lastName" class="sr-only">Last Name</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      class="form-control"
+      placeholder="Last Name"
+      required=""
+    />
+    <label for="email" class="sr-only">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      class="form-control"
+      placeholder="Email"
+      required=""
+    />
+    <label for="text" class="sr-only">Promocode</label>
+    <input
+      type="text"
+      name="promocode"
+      id="promocode"
+      class="form-control"
+      placeholder="Promocode"
+      required=""
+    />
+    <div class="checkbox mb-3">
 
-        <label for="promocode"><b>Promocode</b></label>
-        <input type="text" placeholder="Enter promocode" name="promocode" required />
-
-        <button type="submit" class="btn btn-primary">Create Client</button>
-    </form>
-
-
+    </div>
+    <a href="/clients">
+      <button class="btn btn-m btn-primary btn-block" type="submit">Create
+        Client</button>
+    </a>
+    <p class="mt-5 mb-3 text-muted">© In-Life 2021</p>
+  </form>
+</div>

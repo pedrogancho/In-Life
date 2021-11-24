@@ -57,7 +57,7 @@ router.post("/login", (req, res) => {
         // and setting of the cookie with session id that will be sent with the response
         req.session.user = ambassador;
         console.log("user session: ", req.session.user);
-        res.redirect("/clients");
+        res.redirect("/");
       }
     })
     .catch((err) => {
@@ -135,7 +135,6 @@ router.post("/signup", (req, res) => {
       });
     });
 });
-
 
 router.get("/secret", isLoggedIn, (req, res) => {
   res.render("secret-view");

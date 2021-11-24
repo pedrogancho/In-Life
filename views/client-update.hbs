@@ -1,20 +1,58 @@
-<h2>Edit a Client</h2>
+<div class="align-form">
+  <h2>Edit a Client</h2>
+  <form
+    class="form-signin"
+    action="/client-update/{{client._id}}/edit"
+    method="POST"
+  >
 
-<form action="/client-update/{{client._id}}/edit" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name" value="{{client.name}}" />
+    <h1 class="h3 mb-3 font-weight-normal"></h1>
+    <label for="name" class="sr-only">Name</label>
+    <input
+      type="text"
+      name="name"
+      id="name"
+      class="form-control"
+      placeholder="Name"
+      required=""
+      autofocus=""
+      value="{{client.name}}"
+    />
+    <label for="lastName" class="sr-only">Last Name</label>
+    <input
+      type="text"
+      name="lastName"
+      id="lastName"
+      class="form-control"
+      placeholder="lastName"
+      required=""
+      value="{{client.lastName}}"
+    />
+    <label for="email" class="sr-only">Email</label>
+    <input
+      type="text"
+      name="email"
+      id="email"
+      class="form-control"
+      placeholder="Email"
+      required=""
+      value="{{client.email}}"
+    />
 
-  <label>Last Name:</label>
-  <input type="text" name="lastName" value="{{client.lastName}}" />
+    <div class="checkbox mb-3">
 
-  <label>Email:</label>
-  <input type="text" name="email" value="{{client.email}}" />
+    </div>
+    <a href="/clients">
+      <button class="btn btn-m btn-primary btn-block" type="submit">Save Changes</button>
+    </a>
+    <hr />
 
-  <button type="submit">Save changes</button>
-</form>
-
-<hr />
-
-<form action="/client-update/{{client._id}}/delete" method="POST">
-  <button type="submit">Delete</button>
-</form>
+    <form action="/client-update/{{client._id}}/delete" method="POST">
+      <button
+        class="btn btn-m btn-primary btn-block"
+        type="submit"
+      >Delete</button>
+    </form>
+    <p class="mt-5 mb-3 text-muted">© In-Life 2021</p>
+  </form>
+</div>
