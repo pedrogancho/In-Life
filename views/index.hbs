@@ -4,9 +4,14 @@
 <div id="container">
   {{#if IsLoggedIn}}
 
+    <a href="/clients">
+      <button type="button" class="btn btn-primary">My Clients</button>
+    </a>
+
     <a href="/logout">
       <button type="button" class="btn btn-primary">Logout</button>
     </a>
+    
   {{else}}
     <a href="/login">
       <button type="button" class="btn btn-primary">Login</button>
@@ -17,8 +22,19 @@
   {{/if}}
 </div>
 
+{{#if IsLoggedIn}}
+<p class="text-end fw-bold fs-1">Now it's up to you to make it happen!</p>
+<p class="text-end .text-secondary">Help students and professionals from all over the world to find their new home</p>
+<p class="text-end">Get to know the housing market in the largest portuguese cities</p>
+<p class="text-end">Meet new people and choose your own work schedule</p>
+<p class="text-end">Get practical tips from our team for positive results</p>
+
+{{else}}
+
 <p class="text-end fw-bold fs-1">Come join the Inlife Family!</p>
 <p class="text-end .text-secondary">1. Get a side income by connecting with
   people.</p>
 <p class="text-end">2. Use your network to spread the word about Inlife.</p>
 <p class="text-end">3. Get paid for results.</p>
+
+{{/if}}
