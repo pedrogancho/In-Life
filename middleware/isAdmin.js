@@ -1,7 +1,7 @@
 function isAdmin(req, res, next) {
-    if (!req.session.user && req.session.user.role === "Admin") {
-      return res.redirect("/login");
-    }
-    next();
+  if (req.session.user.role !== "Admin") {
+    return res.redirect("/");
   }
-  module.exports = isAdmin;
+  next();
+}
+module.exports = isAdmin;

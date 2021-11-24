@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Client = require("../models/client-model");
 const isLoggedIn = require("./../middleware/isLoggedIn");
+const isAdmin = require("./../middleware/isAdmin");
 
 /* GET home page */
 router.get("/", (req, res, next) => {
@@ -35,7 +36,7 @@ router.post("/clientsadd", (req, res) => {
     .catch((error) => console.log("erro:", error));
 });
 
-//Get Client page => Show all Clients
+//Get Client page => Show specifi Clients from an ambassador
 router.get("/clients", (req, res) => {
   Client.find({ promocode: req.session.user.promocode }).then(
     (clientsFromDb) => {
@@ -89,6 +90,23 @@ router.post("/client-update/:clientId/delete", (req, res) => {
       res.redirect("/clients");
     })
     .catch((err) => console.log(err));
+});
+
+// GET Admin
+
+router.get("/admin", isAdmin, (req, res) => {
+  Client.find().then((clientsFromDb) => {
+    console.log(clientsFromDb);
+    let IsLoggedIn = false;
+
+    if (req.session.user) {
+      IsLoggedIn = true;
+    }
+    return res.render("admin-view", {
+      clientsFromDb,
+      IsLoggedIn: IsLoggedIn,
+    });
+  });
 });
 
 module.exports = router;

@@ -136,10 +136,6 @@ router.post("/signup", (req, res) => {
     });
 });
 
-// GET Dashboard
-router.get("/ambassador", (req, res) => {
-  res.render("ambassador-dashboard");
-});
 
 router.get("/secret", isLoggedIn, (req, res) => {
   res.render("secret-view");
