@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Admin = require("../models/admin-model");
 const Ambassador = require("../models/ambassador-model");
 const bcrypt = require("bcryptjs");
+const fileUploader = require("../config/cloudinary.config");
 
 const isLoggedIn = require("./../middleware/isLoggedIn");
 
@@ -154,5 +155,22 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
   });
 });
+
+//Provide an Ambassador profile photo
+router.post(
+  "/clients",
+  fileUploader.single("ambassador-picture"),
+  (req, res) => {
+    const { name } = req.body;
+
+    Ambassador.create({ name, image: req.file.path })
+      .then((newlyCreatedImgFromDB) => {
+        console.log(newlyCreatedImgFromDB);
+      })
+      .catch((error) =>
+        console.log(`Error while creating a new movie: ${error}`)
+      );
+  }
+);
 
 module.exports = router;
