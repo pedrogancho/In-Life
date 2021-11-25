@@ -1,8 +1,8 @@
 - **Homepage** - Displaying Login and Signup buttons as well as company information.
 - **Login** - As users, we want to log in so we can see our clients! 😎
-- **Sign Up** -Name , Email ,Password, Confirm Password ,Photo Upload, Promo Code , feature I’m an Ambassador / Manager (Type Dropdown)“Create Account” (Type Button) -> Link to /dashboard“Already have an account? Login here” -> Link to /login 
-- **Dashboard Admin Page** - View clients information from all Ambassadors  
-- **Dashboard Ambassador Page**- View Own clients  (view only his Promo code clients)
+- **Sign Up** -Name , Email ,Password, Confirm Password ,Photo Upload, Promo Code , feature I’m an Ambassador / Manager (Type Dropdown)“Create Account” (Type Button) -> Link to /dashboard“Already have an account? Login here” -> Link to /login
+- **Dashboard Admin Page** - View clients information from all Ambassadors
+- **Dashboard Ambassador Page**- View Own clients (view only his Promo code clients)
 - **Edit Client Page** - Edit clients information
 - **Create Client Page** - Create a new clients.
 - **Log Out** - As users, we want to close our session once we finished navigating through this amazing page so no one can get back to our account. 👋
@@ -10,27 +10,24 @@
 - **500** - As users, we want to be politely warned that the amazing team behind the project screwd it up and it's not our fault. 💔
 
 
-
-
-
 ## Server Routes (back-end)
 
-| **Method** | **Route**               | **Description**                                              | **Request - Body** |
-| ---------- | ----------------------- | ------------------------------------------------------------ | ------------------ |
-| `GET`      | `/`                     | Main page route. Renders home `index` view.                  |                    |
-| `GET`      | `/login`                | Renders `login-form` view.                                   |                    |
-| `GET`      | `/signup`               | Renders `signup-form` view.                                  |                    |
-| `POST`     | `/login`                | Sends Login form data to the server and redirects to dashboard. |                    |
-| `Post`     | `/signup`               | Sends Signup  form data to the server and redirects to Login. |                    |
-| `GET`      | `/admin`                | Renders `dashboard` form view.                               |                    |
-| `GET`      | `/dashboard/ambassador` | Renders `dashboard-ambassador` form view.                    |                    |
-| `POST`     | `/dashboard/admin`      | Sends form data to the server  on `dashboard-admin`          |                    |
-| `GET`      | `/logout`               | Delete the session from the sessions collection.             |                    |
-| `GET`      | `/clients`              | Renders client-view to see all clients                       |                    |
-| `GET`      | `/client-update`        | Renders the edit client Post form                            |                    |
-| `POST`     | `/client-update`        | Sends update form data to the server and redirects to Clients. |                    |
-| `GET`      | `/clientsadd`           | Renders client-add view Post form                            |                    |
-| `POST`     | `/clientsadd`           | Sends clientadd  form data to the server and redirects to Clients. |                    |
+| **Method** | **Route**               | **Description**                                                   | **Request - Body** |
+| ---------- | ----------------------- | ----------------------------------------------------------------- | ------------------ |
+| `GET`      | `/`                     | Main page route. Renders home `index` view.                       |                    |
+| `GET`      | `/login`                | Renders `login-form` view.                                        |                    |
+| `GET`      | `/signup`               | Renders `signup-form` view.                                       |                    |
+| `POST`     | `/login`                | Sends Login form data to the server and redirects to dashboard.   |                    |
+| `Post`     | `/signup`               | Sends Signup form data to the server and redirects to Login.      |                    |
+| `GET`      | `/admin`                | Renders `dashboard` form view.                                    |                    |
+| `GET`      | `/dashboard/ambassador` | Renders `dashboard-ambassador` form view.                         |                    |
+| `POST`     | `/dashboard/admin`      | Sends form data to the server on `dashboard-admin`                |                    |
+| `GET`      | `/logout`               | Delete the session from the sessions collection.                  |                    |
+| `GET`      | `/clients`              | Renders client-view to see all clients                            |                    |
+| `GET`      | `/client-update`        | Renders the edit client Post form                                 |                    |
+| `POST`     | `/client-update`        | Sends update form data to the server and redirects to Clients.    |                    |
+| `GET`      | `/clientsadd`           | Renders client-add view Post form                                 |                    |
+| `POST`     | `/clientsadd`           | Sends clientadd form data to the server and redirects to Clients. |                    |
 
 ## Models
 
@@ -60,8 +57,6 @@ Client model
   }
 ```
 
-
-
 ## Backlog
 
 - Create a public API with the db we made.
@@ -73,8 +68,6 @@ Client model
 https://github.com/Luisfdearaujo/In-Life
 
 https://in-life.herokuapp.com/
-
-
 
 #### Slides
 
