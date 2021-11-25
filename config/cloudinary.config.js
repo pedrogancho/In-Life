@@ -1,4 +1,4 @@
-// config/cloudinary.config.js
+/* config/cloudinary.config.js
 
 const cloudinary = require("cloudinary").v2;
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
@@ -21,4 +21,4 @@ const storage = new CloudinaryStorage({
 });
 
 //                     storage: storage
-module.exports = multer({ storage });
+module.exports = multer({ storage });*/

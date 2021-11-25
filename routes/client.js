@@ -19,15 +19,15 @@ router.get("/clientsadd", (req, res) => {
 });
 
 router.post("/clientsadd", (req, res) => {
-  const { name, lastName, email, promocode } = req.body;
-  console.log(name, lastName, email, promocode);
+  const { name, lastName, email } = req.body;
+  console.log(name, lastName, email);
   console.log("creating client");
 
   return Client.create({
     name: name,
     lastName: lastName,
     email: email,
-    promocode: promocode,
+    promocode: req.session.user.promocode,
   })
     .then((createdClient) => {
       console.log(createdClient);
