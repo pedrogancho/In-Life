@@ -20,5 +20,5 @@ router.get("/", (req, res, next) => {
     isAdmin,
   });
 });
-//Finished
+
 module.exports = router;
