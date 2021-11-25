@@ -6,7 +6,10 @@
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
-      <td> <a href="/clientsadd/{{this._id}}">Add Client</a></td>
+      <td>
+        <a href="/clientsadd/{{this._id}}">
+          <button type="button" class="btn btn-outline-info btn-sm">Add client</button>
+        </a></td>
     </tr>
   </thead>
   <tbody>
@@ -16,7 +19,12 @@
           <td>{{this.name}}</td>
           <td>{{this.lastName}}</td>
           <td>{{this.email}}</td>
-          <td> <a href="/client-update/{{this._id}}/edit">Edit</a></td>
+          <td>
+            <a href="/client-update/{{this._id}}/edit">
+              <button type="button" class="btn btn-outline-info btn-sm">
+                Edit
+              </button>
+            </a></td>
         </tr>
 
       {{/each}}

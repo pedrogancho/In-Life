@@ -120,7 +120,6 @@ router.post("/signup", (req, res) => {
       return Ambassador.create({
         name: name,
         email: email,
-        imageUrl: imageUrl,
         password: hashedPassword,
         promocode: promocode,
         role: "Ambassador",
