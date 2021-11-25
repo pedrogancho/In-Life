@@ -120,6 +120,7 @@ router.post("/signup", (req, res) => {
       return Ambassador.create({
         name: name,
         email: email,
+        imageUrl: imageUrl,
         password: hashedPassword,
         promocode: promocode,
         role: "Ambassador",
@@ -155,22 +156,5 @@ router.get("/logout", (req, res) => {
     res.redirect("/");
   });
 });
-
-//Provide an Ambassador profile photo
-router.post(
-  "/clients",
-  fileUploader.single("ambassador-picture"),
-  (req, res) => {
-    const { name } = req.body;
-
-    Ambassador.create({ name, image: req.file.path })
-      .then((newlyCreatedImgFromDB) => {
-        console.log(newlyCreatedImgFromDB);
-      })
-      .catch((error) =>
-        console.log(`Error while creating a new movie: ${error}`)
-      );
-  }
-);
 
 module.exports = router;

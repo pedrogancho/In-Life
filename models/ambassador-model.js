@@ -6,7 +6,7 @@ const ambassadorSchema = new Schema({
   lastName: String,
   email: String,
   password: String,
-  image: String,
+  imageUrl: String,
   promocode: String,
   role: { type: String, enum: ["Admin", "Client", "Ambassador"] },
 
