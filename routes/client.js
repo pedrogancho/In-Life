@@ -81,7 +81,7 @@ router.post("/client-update/:clientId/edit", (req, res) => {
     .catch((err) => console.log(err));
 });
 
-// POST   client-update/:clientId/delete
+// POST client-update/:clientId/delete
 router.post("/client-update/:clientId/delete", (req, res) => {
   const clientId = req.params.clientId;
 

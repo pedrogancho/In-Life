@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const Admin = require("../models/admin-model");
 const Ambassador = require("../models/ambassador-model");
 const bcrypt = require("bcryptjs");
 const fileUploader = require("../config/cloudinary.config");
