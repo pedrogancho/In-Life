@@ -1,11 +1,13 @@
 - **Homepage** - Displaying Login and Signup buttons as well as company information.
-- **Login** - As users, we want to log in so we can see our clients! 😎
-- **Sign Up** -Name , Email ,Password, Confirm Password ,Photo Upload, Promo Code , feature I’m an Ambassador / Manager (Type Dropdown)“Create Account” (Type Button) -> Link to /dashboard“Already have an account? Login here” -> Link to /login
-- **Dashboard Admin Page** - View clients information from all Ambassadors
-- **Dashboard Ambassador Page**- View Own clients (view only his Promo code clients)
-- **Edit Client Page** - Edit clients information
-- **Create Client Page** - Create a new clients.
-- **Log Out** - As users, we want to close our session once we finished navigating through this amazing page so no one can get back to our account. 👋
+- **Login** - The Ambassadors want to log in so they can see their clients! 😎
+- **Sign Up** - Name , Email , Password, Confirm Password, Photo Upload, Promo Code, "Create Account" Button -> Link to /dashboard, “Already have an account" Button-> Link to /login.
+- **Dashboard Admin Page** - View clients information from all Ambassadors.
+- **Dashboard Ambassador Page**- View Own clients (view only his Promo code clients).
+- **Dashboard Admin Page** - View clients information from all Ambassadors.
+- **Houses Page** - View available apartments and select the adequate ones to send each client.
+- **Edit Client Page** - Edit clients information.
+- **Create Client Page** - Create new clients.
+- **Logout** - The users need to be able to close their session once finished navigating so no one can get back to their account. 👋
 - **404** - As users, we want to be politely warned that this page does not exist and it was our fault to search for it. ⚠️
 - **500** - As users, we want to be politely warned that the amazing team behind the project screwd it up and it's not our fault. 💔
 
@@ -65,7 +67,7 @@ Client model
 
 #### Git
 
-https://github.com/Luisfdearaujo/In-Life
+https://github.com/pedrogancho/In-Life
 
 https://in-life.herokuapp.com/
 
